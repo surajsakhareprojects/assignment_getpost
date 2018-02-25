@@ -1,15 +1,15 @@
 
 Hi
 
-To start this code, Please download or clone it.
-
 
 How to use
-1. Save
-2. Unzip/Uncompress
-3. install npm 
-4. ng serve 
+1 Download abc directory
+2. Save
+3. Unzip/Uncompress
+4. install npm 
+5. ng serve 
 
+Hope you enjoyed
 
 Thank you
 Suraj Sakhare :)
