@@ -1,0 +1,64 @@
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    color: #555;
+    cursor: default;
+    background-color: transparent;
+    border-bottom: 2px solid #4ab3c3;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+
+.whoToFollow{padding: 0 25px 0 20px;
+    font-size: 18px;
+    color: gray;}
+
+.pad-r-10{padding-right: 10px;}    
+.padd-t-20{padding-top:20px;}
+
+.titleTextSize {
+    width: 125px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .trendsTitleTextSize {
+    width: 225px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .headName{
+    font-size: 25px;
+    font-weight: 600;
+    }
+
+    .headNameSub{
+        font-size: 22px;
+        color: gainsboro;
+        font-weight: 600;
+        }
+
+.scrollWhotoFollow{
+    height: 200px;
+    overflow-y: scroll;
+}        
+.scrolltrends{
+    height: 300px;
+    overflow-y: scroll;
+}        
+.scrollMaincontainer{
+    height: 680px;
+    overflow-y: scroll;
+}
+.addNewPost{
+    position: fixed;
+    top: 110px;
+    right: 20px;
+}

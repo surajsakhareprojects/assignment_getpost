@@ -1,0 +1,170 @@
+<div class="header">
+  <h2>Post Header</h2>
+</div>
+
+<div class="row">
+
+    <div class="col-md-8"></div>
+  <div class="col-md-4">
+  <button type="button" class="btn btn-info btn-sm addNewPost" data-toggle="modal" data-target="#myModal">Add New Post</button>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Adding New Post</h4>
+      </div>
+      <div class="modal-body">
+
+<form #userForm ="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+  <fieldset>
+      <div class="row">
+    <div class="col-md-6">
+      <input type="text" class="form-control" name="userid"  placeholder="UserID" ngModel required>
+  </div>
+  <div class="col-md-6">
+      <input type="text" class="form-control" name="userTitle"  placeholder="Title" ngModel required>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-md-12 padd-t-20">
+      <!-- <input type="text" class="form-control" name="userBody" placeholder="Body" ngModel required> -->
+      <textarea type="text" class="form-control" name="userBody" placeholder="Body" ngModel required></textarea>
+  </div>
+</div>
+  
+  <div class="row">
+    <div class="col-lg-2 col-lg-push-10 padd-t-20">
+        <input type="submit" value="Submit" class="btn btn-success">
+    </div>
+  </div>
+</fieldset>
+ 
+  </form> 
+
+   </div>
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <div class="leftcolumn">
+      <div class="card">
+          <div class="row">
+          <div class="col-md-4">
+            <span>Tweets</span><br/>
+          <!-- comment api .length / count -->
+          <span>{{commentsCount}}</span>
+          </div>
+          <div class="col-md-4">
+              <span>Following</span><br/>
+            <!-- photos api .length / count -->
+            <span>{{photosCount}}</span>
+          </div>
+          <div class="col-md-4">
+              <span>Followers</span><br/>
+          <!-- albums api .length / count -->
+          <span>{{albumsCount}}</span>
+          </div>
+        </div>
+        </div>
+        
+
+    <div class="card">
+  <span class="whoToFollow">Who to Follow</span>
+  <span class="pad-r-10"><a>Refresh</a></span>
+  <span><a>See all</a></span>
+</div>
+<div class="card scrollWhotoFollow">
+    <div class="row" *ngFor="let usersData of getUsersData">
+      <div class="col-md-3"><i class="add-user-icon">Add</i></div>  
+      <div class="col-md-3"><img src="" alt="usrimg"></div>
+        <div class="col-md-6">
+          <div class="col-md-6">{{usersData.userId}}</div><div class="col-md-6"><a>@{{usersData.userId}}</a></div>
+          <p class="titleTextSize">{{usersData.title}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card scrolltrends" >
+      <h5>Trends</h5>
+      <div *ngFor="let tasksData of getTasksData">
+        <p class="trendsTitleTextSize">
+          <a  href="#">#{{tasksData.title}}</a>
+        </p></div>
+    </div>
+  </div>
+    <div class="rightcolumn">
+        
+            <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home"><i class="home-icon"></i>Home</a></li>
+                    <li><a data-toggle="tab" href="#albums"><i class="bell-icon"></i>Albums</a></li>
+                    <li><a data-toggle="tab" href="#photos"><i class="hashtag-icon"></i>Photos</a></li>
+                    <li><a data-toggle="tab" href="#me"><i class="user-icon"></i>Me</a></li>
+                  </ul>
+                
+                  <div class="tab-content scrollMaincontainer">
+                    <div id="home" class="tab-pane fade in active">
+                      <h3>Tweets</h3>
+                      <div class="card" *ngFor="let postsData of getPostsData">
+                            <span class="headName">{{postsData.userId}}</span> <span class="headNameSub">@{{postsData.userId}}</span> 
+                            <h4>Title: {{postsData.title}}</h4>
+                            <!-- <div *ngIf="{{postsData.img}}" class="fakeimg" style="height:200px;">
+                              <img src="{{postsData.img}}" alt="postimg" height="" width="">
+                            </div> -->
+                            <p>Description: {{postsData.body}}</p>
+                          </div>
+                    </div>
+                    <!-- home tab close -->
+
+
+                    <div id="albums" class="tab-pane fade">
+                      <h3>Albums</h3>
+                      <div class="card" *ngFor="let albumsData of getAlbumsData">
+                        <span class="headName">{{albumsData.userId}}</span> <span class="headNameSub">@{{albumsData.userId}}</span> 
+                        <h4>Title: {{albumsData.title}}</h4>
+                        <!-- <div *ngIf="{{postsData.img}}" class="fakeimg" style="height:200px;">
+                          <img src="{{postsData.img}}" alt="postimg" height="" width="">
+                        </div> -->
+                        <p>Description: {{albumsData.body}}</p>
+                      </div>
+                    </div>
+                    <!-- albums tab close -->
+
+                    <div id="photos" class="tab-pane fade">
+                      <h3>Photos</h3>
+                       <div class="card" *ngFor="let photosData of getPhotosData">
+                        <span class="headName">{{photosData.userId}}</span> <span class="headNameSub">@{{photosData.userId}}</span> 
+                        <h4>Title: {{photosData.title}}</h4>
+                        <!-- <div *ngIf="{{photosData.img}}" class="fakeimg" style="height:200px;">
+                          <img src="{{photosData.img}}" alt="photoimg" height="" width="">
+                        </div> -->
+                        <p>Description: {{photosData.body}}</p>
+                      </div>
+                    </div>
+                    <div id="me" class="tab-pane fade">
+                      <h3>List Of all users Posts</h3>
+                      <div class="card" *ngFor="let usersData of getUsersData">
+                        <span class="headName">{{usersData.userId}}</span> <span class="headNameSub">@{{usersData.userId}}</span> 
+                        <h4>Title: {{usersData.title}}</h4>
+                        <!-- <div *ngIf="{{usersData.img}}" class="fakeimg" style="height:200px;">
+                          <img src="{{usersData.img}}" alt="photoimg" height="" width="">
+                        </div> -->
+                        <p>Description: {{usersData.body}}</p>
+                      </div>
+                    </div>
+                  </div>
+    
+    
+    
+
+  </div>
+</div>
