@@ -1,0 +1,20 @@
+How to run
+
+install angular cli
+install npm 
+
+project is ready 
+run on localhost 4200
+
+Need to setup
+Use JSON Server for storing data on client machine 
+follow instruction use userlist.json file 
+which is inside zip/crudjson/jsonserver/userlist.json
+https://github.com/typicode/json-server
+
+json-server run on localhost 3000
+run json-server userlist.json
+
+
+If any help you need plz connect me on 9665197771
+Thank you.
