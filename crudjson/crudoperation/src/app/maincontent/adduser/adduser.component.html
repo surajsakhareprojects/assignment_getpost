@@ -1,0 +1,41 @@
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
+
+<h3>Add New User</h3>
+
+<form id="userlistform" name="userlistform" class="padd-b-15-row" #userlistformData="ngForm" (ngSubmit)="addNewUser(userlistformData.value)">
+    <div class="row">
+  <div class="col-md-4"><label>First Name</label></div>
+  <div class="col-md-8"><input type="text" id="firstname" name="firstname" ngModel required></div>
+</div>
+
+<div class="row">
+    <div class="col-md-4"><label>Last Name</label></div>
+    <div class="col-md-8"><input type="text" id="lastname" name="lastname" ngModel required></div>
+</div>
+
+<div class="row">
+    <div class="col-md-4"><label>User Name</label></div>
+    <div class="col-md-8"><input type="text" id="username" name="username" ngModel required></div>
+</div>
+
+<div class="row">
+    <div class="col-md-4"><label>City</label></div>
+    <div class="col-md-8"><input type="text" id="city" name="city" ngModel required></div>
+</div>
+
+<div class="row">
+    <div class="col-md-4"><label>Department</label></div>
+    <div class="col-md-8"><input type="text" id="Department" name="Department" ngModel required></div>
+</div>
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"><input type="submit" value="Submit" class="btn btn-success"></div>
+    <div class="col-md-4"><a href="/" class="btn btn-warning">Show User List</a></div>
+</div>
+</form>
+
+</div>
+<div class="col-md-4"></div>
